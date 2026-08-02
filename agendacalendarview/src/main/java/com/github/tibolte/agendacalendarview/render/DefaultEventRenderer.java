@@ -1,6 +1,6 @@
 package com.github.tibolte.agendacalendarview.render;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -50,3 +50,4 @@ public class DefaultEventRenderer extends EventRenderer<BaseCalendarEvent> {
 
     // endregion
 }
+

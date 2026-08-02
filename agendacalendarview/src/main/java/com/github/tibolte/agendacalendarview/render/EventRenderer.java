@@ -1,6 +1,6 @@
 package com.github.tibolte.agendacalendarview.render;
 
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.view.View;
 
 import com.github.tibolte.agendacalendarview.models.CalendarEvent;
@@ -21,3 +21,4 @@ public abstract class EventRenderer<T extends CalendarEvent> {
         return (Class<T>) type.getActualTypeArguments()[0];
     }
 }
+

@@ -10,10 +10,10 @@ import com.github.tibolte.agendacalendarview.models.IDayItem;
 import com.github.tibolte.agendacalendarview.models.IWeekItem;
 import com.github.tibolte.agendacalendarview.models.WeekItem;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -21,17 +21,12 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity implements CalendarPickerController {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    @Bind(R.id.activity_toolbar)
-    Toolbar mToolbar;
-    @Bind(R.id.agenda_calendar_view)
-    AgendaCalendarView mAgendaCalendarView;
+    private Toolbar mToolbar;
+    private AgendaCalendarView mAgendaCalendarView;
 
     // region Lifecycle methods
 
@@ -39,7 +34,9 @@ public class MainActivity extends AppCompatActivity implements CalendarPickerCon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        mToolbar = findViewById(R.id.activity_toolbar);
+        mAgendaCalendarView = findViewById(R.id.agenda_calendar_view);
 
         setSupportActionBar(mToolbar);
 
@@ -113,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements CalendarPickerCon
         startTime2.add(Calendar.DAY_OF_YEAR, 1);
         Calendar endTime2 = Calendar.getInstance();
         endTime2.add(Calendar.DAY_OF_YEAR, 3);
-        BaseCalendarEvent event2 = new BaseCalendarEvent("Visit to Dalvík", "A beautiful small town", "Dalvík",
+        BaseCalendarEvent event2 = new BaseCalendarEvent("Visit to Dalv铆k", "A beautiful small town", "Dalv铆k",
                 ContextCompat.getColor(this, R.color.yellow), startTime2, endTime2, true);
         eventList.add(event2);
 
@@ -123,10 +120,11 @@ public class MainActivity extends AppCompatActivity implements CalendarPickerCon
         startTime3.set(Calendar.MINUTE, 0);
         endTime3.set(Calendar.HOUR_OF_DAY, 15);
         endTime3.set(Calendar.MINUTE, 0);
-        DrawableCalendarEvent event3 = new DrawableCalendarEvent("Visit of Harpa", "", "Dalvík",
+        DrawableCalendarEvent event3 = new DrawableCalendarEvent("Visit of Harpa", "", "Dalv铆k",
                 ContextCompat.getColor(this, R.color.blue_dark), startTime3, endTime3, false, android.R.drawable.ic_dialog_info);
         eventList.add(event3);
     }
 
     // endregion
 }
+

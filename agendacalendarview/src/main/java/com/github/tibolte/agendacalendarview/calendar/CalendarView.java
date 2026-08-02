@@ -12,7 +12,7 @@ import com.github.tibolte.agendacalendarview.utils.DateHelper;
 import com.github.tibolte.agendacalendarview.utils.Events;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -272,3 +272,4 @@ public class CalendarView extends LinearLayout {
 
     // endregion
 }
+

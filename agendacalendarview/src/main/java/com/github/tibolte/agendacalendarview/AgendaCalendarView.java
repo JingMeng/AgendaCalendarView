@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Handler;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -251,3 +251,4 @@ public class AgendaCalendarView extends FrameLayout implements StickyListHeaders
 
     // endregion
 }
+
